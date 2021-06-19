@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  sample:
+    container_name: sample
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/app"
+    ports:
+      - 3001:3001
+    environment:
+      - PORT=3001
+      - CHOKIDAR_USEPOLLING=true
